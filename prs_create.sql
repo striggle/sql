@@ -14,10 +14,10 @@ CREATE TABLE user (
   email              varchar(75)        not null,
   isreviewer         tinyint(1)         not null,     
   isadmin            tinyint(1)         not null,
-  isactive           tinyint(1)         not null  default 1,
-  datecreated        datetime           not null  default current_timestamp,
-  dateupdated        datetime           not null  default current_timestamp on update current_timestamp,
-  updatedbyuser      int                not null  default 1
+  isactive           tinyint(1)         not null      default 1,
+  datecreated        datetime           not null      default current_timestamp,
+  dateupdated        datetime           not null      default current_timestamp on update current_timestamp,
+  updatedbyuser      int                not null      default 1
 );
 
 -- create the vendor table
@@ -32,10 +32,10 @@ CREATE TABLE vendor (
   phonenumber             varchar(12)         not null,     
   email                   varchar(100)        not null,
   ispreapproved           tinyint(1)          not null,
-  isactive                tinyint(1)          not null  default 1,
-  datecreated             datetime            not null  default current_timestamp,
-  dateupdated             datetime            not null  default current_timestamp on update current_timestamp ,
-  updatedbyuser           int                 not null  default 1
+  isactive                tinyint(1)          not null      default 1,
+  datecreated             datetime            not null      default current_timestamp,
+  dateupdated             datetime            not null      default current_timestamp on update current_timestamp ,
+  updatedbyuser           int                 not null      default 1
 );
 
 -- create the purchaserequest table
@@ -50,10 +50,10 @@ CREATE TABLE purchaserequest (
   total                     decimal(10,2)       not null,
   submitteddate             datetime,     
   reasonforrejection        varchar(100)        not null,
-  isactive                  tinyint(1)          not null  default 1,
-  datecreated               datetime            not null  default current_timestamp,
-  dateupdated               datetime            not null  default current_timestamp on update current_timestamp ,
-  updatedbyuser             int                 not null  default 1,
+  isactive                  tinyint(1)          not null      default 1,
+  datecreated               datetime            not null      default current_timestamp,
+  dateupdated               datetime            not null      default current_timestamp on update current_timestamp ,
+  updatedbyuser             int                 not null      default 1,
   foreign key(userid) references user(id)
 );
 
@@ -66,10 +66,10 @@ CREATE TABLE product (
   price                     decimal(10,2)            not null,
   unit                      varchar(255),
   photopath                 varchar(255),
-  isactive                  tinyint(1)               not null  default 1,
-  datecreated               datetime                 not null  default current_timestamp,
-  dateupdated               datetime                 not null  default current_timestamp on update current_timestamp ,
-  updatedbyuser             int                      not null  default 1,
+  isactive                  tinyint(1)               not null      default 1,
+  datecreated               datetime                 not null      default current_timestamp,
+  dateupdated               datetime                 not null      default current_timestamp on update current_timestamp ,
+  updatedbyuser             int                      not null      default 1,
   foreign key(vendorid) references vendor(id),
   CONSTRAINT vendor_part unique (VendorID, PartNumber)
 
@@ -81,10 +81,10 @@ CREATE TABLE purchaserequestlineitem (
   purchaserequestid         int                      NOT NULL,
   productid                 int                      NOT NULL,
   quantity                  int                      NOT NULL,
-  isactive                  tinyint(1)               not null  default 1,
-  datecreated               datetime                 not null  default current_timestamp,
-  dateupdated               datetime                 not null  default current_timestamp on update current_timestamp ,
-  updatedbyuser             int                      not null  default 1,
+  isactive                  tinyint(1)               not null      default 1,
+  datecreated               datetime                 not null      default current_timestamp,
+  dateupdated               datetime                 not null      default current_timestamp on update current_timestamp ,
+  updatedbyuser             int                      not null      default 1,
   foreign key(purchaserequestid) references purchaserequest(id),
   foreign key(productid) references product(id),
   CONSTRAINT req_pdt unique (PurchaseRequestID, ProductID)
@@ -124,7 +124,7 @@ INSERT INTO `product` (`ID`,`VendorID`,`PartNumber`,`Name`,`Price`,`Unit`,`Photo
 
 
 -- create a user and grant privileges to that user
-GRANT SELECT, INSERT, DELETE, UPDATE
-ON mma.*
-TO mma_user@localhost
-IDENTIFIED BY 'sesame';
+-- GRANT SELECT, INSERT, DELETE, UPDATE
+-- ON mma.*
+-- TO mma_user@localhost
+-- IDENTIFIED BY 'sesame';
