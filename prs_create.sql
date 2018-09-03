@@ -5,9 +5,9 @@ USE prs;
 
 -- create the user table
 CREATE TABLE user (
-  ID                 INT                PRIMARY KEY   auto_increment,
-  username           VARCHAR(20)        NOT NULL      unique,
-  password           VARCHAR(10)        NOT NULL,
+  ID                 int                PRIMARY KEY   auto_increment,
+  username           varchar(20)        NOT NULL      unique,
+  password           varchar(10)        NOT NULL,
   firstname          varchar(20)        NOT NULL,
   lastname           varchar(20)        not null,
   phonenumber        varchar(12)        not null,
@@ -22,9 +22,9 @@ CREATE TABLE user (
 
 -- create the vendor table
 CREATE TABLE vendor (
-  ID                      INT                 PRIMARY KEY   auto_increment,
-  code                    VARCHAR(10)         NOT NULL      unique,
-  name                    VARCHAR(255)        NOT NULL,
+  ID                      int                 PRIMARY KEY   auto_increment,
+  code                    varchar(10)         NOT NULL      unique,
+  name                    varchar(255)        NOT NULL,
   address                 varchar(255)        NOT NULL,
   city                    varchar(255)        not null,
   state                   varchar(2)          not null,
@@ -34,7 +34,7 @@ CREATE TABLE vendor (
   ispreapproved           tinyint(1)          not null,
   isactive                tinyint(1)          not null      default 1,
   datecreated             datetime            not null      default current_timestamp,
-  dateupdated             datetime            not null      default current_timestamp on update current_timestamp ,
+  dateupdated             datetime            not null      default current_timestamp on update current_timestamp,
   updatedbyuser           int                 not null      default 1
 );
 
