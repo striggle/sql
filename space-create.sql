@@ -38,7 +38,7 @@ CREATE TABLE mission (
   launch                      date                     not null,
   commanderid                 INT                      NOT NULL,
   programid                   int                      NOT NULL,
-  spacecraftid                int                      NOT NULL
+  spacecraftid                int                      NOT NULL,
   foreign key(commanderid) references commander(id),
   foreign key(programid) references program(id),
   foreign key(spacecraftid) references spacecraft(id)
@@ -51,7 +51,7 @@ INSERT INTO commander (ID, firstname, lastname, birthday, homestate, military) V
 (3, 'John', 'Glenn', '1921-07-18', 'Ohio', 'Marines'),
 (4, 'Virgil', 'Grisom', '1926-04-03', 'Indiana', 'Air Force'),
 (5, 'Walter', 'Schirra', '1923-03-12', 'New Jersey', 'Navy'),
-(6, 'Alan', 'Shepard', '1923-11-18', 'New Hampshire', 'Navy'),
+(6, 'Alan', 'Shepard', '1923-11-18', 'New Hampshire', 'Navy');
 
 -- insert programs
 INSERT INTO program (ID, name, startyear, endyear, flights) 
@@ -75,12 +75,12 @@ VALUES
 -- insert missions
 INSERT INTO mission (ID, name, launch, commanderid, programid, spacecraftid) 
 VALUES 
-(1, 'MR-3', '1961-05-05', !, 1, 1),
-(2,'MR-4','1961-07-21', !, 1, 2),
-(3,'MA-6','1962-02-20', !, 1, 3),
-(4,'MA-7','1962-05-24', !, 1, 4),
-(5,'MA-8','1962-10-03', !, 1, 5),
-(6,'MA-9','1963-05-15', !, 1, 6);
+(1, 'MR-3', '1961-05-05', 6, 1, 1),
+(2, 'MR-4', '1961-07-21', 4, 1, 2),
+(3, 'MA-6', '1962-02-20', 3, 1, 3),
+(4, 'MA-7', '1962-05-24', 1, 1, 4),
+(5, 'MA-8', '1962-10-03', 5, 1, 5),
+(6, 'MA-9', '1963-05-15', 2, 1, 6);
 
 CREATE USER space_user@localhost IDENTIFIED BY 'sesame';
 GRANT SELECT, INSERT, DELETE, UPDATE ON space.* TO space_user@localhost;
