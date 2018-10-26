@@ -8,7 +8,7 @@ CREATE TABLE commander (
   ID                 int                PRIMARY KEY   auto_increment,
   firstname          varchar(20)        NOT NULL,
   lastname           varchar(20)        not null,
-  birthday           datetime           not null,
+  birthday           date               not null,
   homestate          varchar(20)        not null
 );
 
@@ -34,7 +34,7 @@ CREATE TABLE spacecraft (
 CREATE TABLE mission (
   ID                          INT                      PRIMARY KEY   auto_increment,
   name                        varchar(20)              not null,
-  launch                      datetime                 not null,
+  launch                      date                     not null,
   commanderid                 INT                      NOT NULL,
   programid                   int                      NOT NULL,
   spacecraftid                int                      NOT NULL
@@ -65,16 +65,17 @@ VALUES
 (3, 'Friendship 7', 1962, 1962, 1),
 (4, 'Aurora 7', 1962, 1962, 1),
 (5, 'Sigma 7', 1962, 1962, 1),
-(6, 'Faith 7', 1963, 1963, 1),
+(6, 'Faith 7', 1963, 1963, 1);
 
 -- insert missions
 INSERT INTO mission (ID, name, launch, commanderid, programid, spacecraftid) 
 VALUES 
-(1,'BB-1001','Best Buy','100 Best Buy Street','Louisville','KY','40207','502-111-9099','geeksquad@bestbuy.com',1),
-(2,'AP-1001','Apple Inc','1 Infinite Loop','Cupertino','CA','95014','800-123-4567','genius@apple.com',1),
-(3,'AM-1001','Amazon','410 Terry Ave. North','Seattle','WA','98109','206-266-1000','amazon@amazon.com',0),
-(4,'ST-1001','Staples','9550 Mason Montgomery Rd','Mason','OH','45040','513-754-0235','support@orders.staples.com',0),
-(5,'MC-1001','Micro Center','11755 Mosteller Rd','Sharonville','OH','45241','513-782-8500','support@microcenter.com',0);
+(1, 'MR-3', '1961-05-05', !, 1, 1),
+(2,'MR-4','1961-07-21', !, 1, 2),
+(3,'MA-6','1962-02-20', !, 1, 3),
+(4,'MA-7','1962-05-24', !, 1, 4),
+(5,'MA-8','1962-10-03', !, 1, 5),
+(6,'MA-9','1963-05-15', !, 1, 6);
 
 CREATE USER space_user@localhost IDENTIFIED BY 'sesame';
 GRANT SELECT, INSERT, DELETE, UPDATE ON space.* TO space_user@localhost;
