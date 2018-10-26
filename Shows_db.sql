@@ -123,8 +123,5 @@ INSERT INTO `product` (`ID`,`VendorID`,`PartNumber`,`Name`,`Price`,`Unit`,`Photo
 
 
 
--- create a user and grant privileges to that user
--- GRANT SELECT, INSERT, DELETE, UPDATE
--- ON mma.*
--- TO mma_user@localhost
--- IDENTIFIED BY 'sesame';
+CREATE USER prs_user@localhost IDENTIFIED BY 'sesame';
+GRANT SELECT, INSERT, DELETE, UPDATE ON prs.* TO prs_user@localhost;
