@@ -9,7 +9,8 @@ CREATE TABLE commander (
   firstname          varchar(20)        NOT NULL,
   lastname           varchar(20)        not null,
   birthday           date               not null,
-  homestate          varchar(20)        not null
+  homestate          varchar(20)        not null,
+  military           varchar(20)        not null
 );
 
 -- create the program table
@@ -44,9 +45,13 @@ CREATE TABLE mission (
 );
 
 -- insert commanders
-INSERT INTO commander (ID, firstname, lastname, birthday, homestate) VALUES 
-(1,'SYSTEM','xxxxx','System','System','XXX-XXX-XXXX','system@test.com',1,1),
-(2,'sblessing','login','Sean','Blessing','513-600-7096','sean@blessingtechnology.com',1,1);
+INSERT INTO commander (ID, firstname, lastname, birthday, homestate, military) VALUES 
+(1, 'Malcom', 'Carpenter', '1925-05-01', 'Colorado', 'Navy'),
+(2, 'Leroy', 'Cooper', '1927-03-06', 'Oklahoma', 'Air Force'),
+(3, 'John', 'Glenn', '1921-07-18', 'Ohio', 'Marines'),
+(4, 'Virgil', 'Grisom', '1926-04-03', 'Indiana', 'Air Force'),
+(5, 'Walter', 'Schirra', '1923-03-12', 'New Jersey', 'Navy'),
+(6, 'Alan', 'Shepard', '1923-11-18', 'New Hampshire', 'Navy'),
 
 -- insert programs
 INSERT INTO program (ID, name, startyear, endyear, flights) 
