@@ -15,7 +15,7 @@ CREATE TABLE commander (
 -- create the program table
 CREATE TABLE program (
   ID                      int                 PRIMARY KEY   auto_increment,
-  name                    varchar(50)         NOT NULL,
+  name                    varchar(20)         NOT NULL,
   startyear               int                 NOT NULL,
   endyear                 int                 not null,
   flights                 int                 not null
@@ -24,7 +24,7 @@ CREATE TABLE program (
 -- create the spacecraft table
 CREATE TABLE spacecraft (
   ID                        INT                 PRIMARY KEY   auto_increment,
-  name                      VARCHAR(50)         NOT NULL,
+  name                      VARCHAR(20)         NOT NULL,
   debut                     int                 not null,
   retirement                int                 not null,
   flights                   int                 not null
@@ -33,7 +33,7 @@ CREATE TABLE spacecraft (
 -- create the mission table
 CREATE TABLE mission (
   ID                          INT                      PRIMARY KEY   auto_increment,
-  name                        varchar(50)              not null,
+  name                        varchar(20)              not null,
   launch                      datetime                 not null,
   commanderid                 INT                      NOT NULL,
   programid                   int                      NOT NULL,
@@ -55,16 +55,17 @@ VALUES
 (2,'Gemini', 1963, 1966, 10),
 (3,'Apollo', 1961, 1972, 11),
 (4,'Skylab', 1973, 1974, 3),
-(5,'Space Shuttle',1981, 2011, 135);
+(5,'Space Shuttle', 1981, 2011, 135);
 
 -- insert spacecrafts
 INSERT INTO spacecraft (ID, name, debut, retirement, flights) 
 VALUES 
-(1,'BB-1001','Best Buy','100 Best Buy Street','Louisville','KY','40207','502-111-9099','geeksquad@bestbuy.com',1),
-(2,'AP-1001','Apple Inc','1 Infinite Loop','Cupertino','CA','95014','800-123-4567','genius@apple.com',1),
-(3,'AM-1001','Amazon','410 Terry Ave. North','Seattle','WA','98109','206-266-1000','amazon@amazon.com',0),
-(4,'ST-1001','Staples','9550 Mason Montgomery Rd','Mason','OH','45040','513-754-0235','support@orders.staples.com',0),
-(5,'MC-1001','Micro Center','11755 Mosteller Rd','Sharonville','OH','45241','513-782-8500','support@microcenter.com',0);
+(1, 'Freedom 7', 1961, 1961, 1),
+(2, 'Liberty Bell 7', 1961, 1961, 1),
+(3, 'Friendship 7', 1962, 1962, 1),
+(4, 'Aurora 7', 1962, 1962, 1),
+(5, 'Sigma 7', 1962, 1962, 1),
+(6, 'Faith 7', 1963, 1963, 1),
 
 -- insert missions
 INSERT INTO mission (ID, name, launch, commanderid, programid, spacecraftid) 
