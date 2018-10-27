@@ -58,7 +58,9 @@ INSERT INTO commander (ID, firstname, lastname, birthday, homestate, military) V
 (10, 'Thomas', 'Stafford', '1930-09-17', 'Oklahoma', 'Air Force'),
 (11, 'John', 'Young', '1930-09-24', 'California', 'Navy'),
 (12, 'Charles', 'Conrad', '1930-06-02', 'Pennsylvania', 'Navy'),
-(13, 'James', 'Lovell', '1928-03-25', 'Ohio', 'Navy');
+(13, 'James', 'Lovell', '1928-03-25', 'Ohio', 'Navy'),
+(14, 'David', 'Scott', '1932-06-06', 'Texas', 'Air Force'),
+(15, 'Eugene', 'Cernan', '1934-03-14', 'Illinois', 'Navy');
 
 -- insert programs
 INSERT INTO program (ID, name, startyear, endyear, flights) 
