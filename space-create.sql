@@ -51,7 +51,14 @@ INSERT INTO commander (ID, firstname, lastname, birthday, homestate, military) V
 (3, 'John', 'Glenn', '1921-07-18', 'Ohio', 'Marines'),
 (4, 'Virgil', 'Grisom', '1926-04-03', 'Indiana', 'Air Force'),
 (5, 'Walter', 'Schirra', '1923-03-12', 'New Jersey', 'Navy'),
-(6, 'Alan', 'Shepard', '1923-11-18', 'New Hampshire', 'Navy');
+(6, 'Alan', 'Shepard', '1923-11-18', 'New Hampshire', 'Navy'),
+(7, 'James', 'McDivitt', '1929-06-10', 'Illinois', 'Air Force'),
+(8, 'Frank', 'Borman', '1928-03-14', 'Indiana', 'Air Force'),
+(9, 'Neil', 'Armstrong', '1930-08-05', 'Ohio', 'Navy'),
+(10, 'Thomas', 'Stafford', '1930-09-17', 'Oklahoma', 'Air Force'),
+(11, 'John', 'Young', '1930-09-24', 'California', 'Navy'),
+(12, 'Charles', 'Conrad', '1930-06-02', 'Pennsylvania', 'Navy'),
+(13, 'James', 'Lovell', '1928-03-25', 'Ohio', 'Navy');
 
 -- insert programs
 INSERT INTO program (ID, name, startyear, endyear, flights) 
@@ -92,5 +99,5 @@ VALUES
 (5, 'MA-8', '1962-10-03', 5, 1, 5),
 (6, 'MA-9', '1963-05-15', 2, 1, 6);
 
-CREATE USER space_user@localhost IDENTIFIED BY 'sesame';
-GRANT SELECT, INSERT, DELETE, UPDATE ON space.* TO space_user@localhost;
+-- CREATE USER space_user@localhost IDENTIFIED BY 'sesame';
+-- GRANT SELECT, INSERT, DELETE, UPDATE ON space.* TO space_user@localhost;
