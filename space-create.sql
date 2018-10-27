@@ -60,7 +60,9 @@ INSERT INTO commander (ID, firstname, lastname, birthday, homestate, military) V
 (12, 'Charles', 'Conrad', '1930-06-02', 'Pennsylvania', 'Navy'),
 (13, 'James', 'Lovell', '1928-03-25', 'Ohio', 'Navy'),
 (14, 'David', 'Scott', '1932-06-06', 'Texas', 'Air Force'),
-(15, 'Eugene', 'Cernan', '1934-03-14', 'Illinois', 'Navy');
+(15, 'Eugene', 'Cernan', '1934-03-14', 'Illinois', 'Navy'),
+(16, 'Alan', 'Bean', '1932-03-15', 'Texas', 'Navy'),
+(17, 'Gerald', 'Carr', '1932-08-22', 'California', 'Marines');
 
 -- insert programs
 INSERT INTO program (ID, name, startyear, endyear, flights) 
@@ -100,7 +102,10 @@ VALUES
 (24, 'CSM-110', 1971, 1971, 1),
 (25, 'CSM-112', 1971, 1971, 1),
 (26, 'CSM-113', 1972, 1972, 1),
-(27, 'CSM-114', 1972, 1972, 1);
+(27, 'CSM-114', 1972, 1972, 1),
+(28, 'Skylab 2', 1973, 1973, 1),
+(29, 'Skylab 3', 1973, 1973, 1),
+(30, 'Skylab 4', 1973, 1974, 1);
 
 -- insert missions
 INSERT INTO mission (ID, name, launch, commanderid, programid, spacecraftid) 
@@ -131,7 +136,10 @@ VALUES
 (24, 'Apollo 14', '1971-01-31', 6, 3, 24),
 (25, 'Apollo 15', '1971-07-26', 14, 3, 25),
 (26, 'Apollo 16', '1972-04-16', 11, 3, 26),
-(27, 'Apollo 17', '1972-12-07', 15, 3, 27);
+(27, 'Apollo 17', '1972-12-07', 15, 3, 27),
+(28, 'SLM-1', '1973-05-25', 12, 4, 28),
+(29, 'SLM-2', '1973-07-28', 16, 4, 29),
+(30, 'SLM-3', '1973-11-16', 17, 4, 30);
 
 -- CREATE USER space_user@localhost IDENTIFIED BY 'sesame';
 -- GRANT SELECT, INSERT, DELETE, UPDATE ON space.* TO space_user@localhost;
